@@ -23,4 +23,5 @@ save(file_name, 'image_data')
 %% Verify that we indeed saved it
 clear image_data
 load(file_name)
+assert(length(image_data) == num_files)
 arrayfun(@(x) disp(x.name + ', ' + x.width + ', ' + x.height), image_data)
