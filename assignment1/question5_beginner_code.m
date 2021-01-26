@@ -45,7 +45,7 @@ tEnd = toc(tStart);
 fprintf("Elapsed time - vectorized: %fs\n", tEnd)
 
 %% Betterer code
-% Vectorized operation, no intermediate variable, better UI
+% Vectorized operation, no temporary variable, better UI
 % Improves the UI by showing the original and modified images side by side
 % As a bonus, it is significantly improves the time to show the images to the users
 % (one to a grpahing/windowing function instead of two)
