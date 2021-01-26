@@ -2,7 +2,8 @@
 files = ["pout.tif", "coins.png", "cameraman.tif", "rice.png"];
 num_files = length(files);
 
-%% Preallocate array (memory management best practices)
+%% Preallocate array memory management best practices
+%% https://www.mathworks.com/help/matlab/matlab_prog/preallocating-arrays.html
 image_data = repmat(struct('name', "", 'width', 0, 'height', 0), 1, num_files);
 
 %% Populate array with image data
