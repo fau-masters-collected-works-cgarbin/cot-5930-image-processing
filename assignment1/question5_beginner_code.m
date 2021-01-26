@@ -48,7 +48,7 @@ fprintf("Elapsed time - vectorized: %fs\n", tEnd)
 % Vectorized operation, no temporary variable, better UI
 % Improves the UI by showing the original and modified images side by side
 % As a bonus, it is significantly improves the time to show the images to the users
-% (one to a grpahing/windowing function instead of two)
+% (one call to a graphing/windowing function instead of two)
 % From the practical point of view, i.e. what the user perceives, the change to
 % `montage` is the largest improvement in responsiveness
 Ic = imread('coins.png');
