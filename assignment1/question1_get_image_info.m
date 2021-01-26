@@ -1,4 +1,4 @@
-%% Define the list of files to read
+%% Define the list of images we will work with
 files = ["pout.tif", "coins.png", "cameraman.tif", "rice.png"];
 num_files = length(files);
 
@@ -20,7 +20,7 @@ arrayfun(@(x) disp(x.name + ', ' + x.width + ', ' + x.height), image_data)
 file_name = 'image_data.mat';
 save(file_name, 'image_data')
 
-%% Verify that we indeed saved it
+%% Verify that we saved it correctly
 clear image_data
 load(file_name)
 assert(length(image_data) == num_files)
