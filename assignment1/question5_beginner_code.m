@@ -13,6 +13,25 @@ figure, imshow(J)
 tEnd = toc(tStart);
 fprintf("Elapsed time - beginner's code: %fs\n", tEnd)
 
+%% Questions about the code
+%
+% a) Does the script work as expected?
+% Yes
+%
+% b) Will it still work if you remove teh uint8 typecasting in line 32? Why (not)?
+% No, because the default type for `zeros` is double.
+%
+% c) What is the main problem of with this code? Be specific!
+% It uses for loops to apply the same operation on a matrix (array). It should use
+% vectorized operations instead.
+%
+% d) Rewrite the code to improve its efficiency while keeping it readable.
+% See next code sections.
+%
+% e) Compare the performance of the original code against the modified version you
+%    you wrote, using tic and toc.
+% See timing printed after code section.
+
 %% Better code
 % Vectorized operations
 % Solves the computational problem from the original code: using a loop instead of
@@ -23,8 +42,7 @@ Jb = Ib * 0.5;
 figure, imshow(Ib)
 figure, imshow(Jb)
 tEnd = toc(tStart);
-fprintf("Elapsed time - vectorized 1: %fs\n", tEnd)
-
+fprintf("Elapsed time - vectorized: %fs\n", tEnd)
 
 %% Betterer code
 % Vectorized operation, no intermediate variable, better UI
@@ -37,5 +55,5 @@ Ic = imread('coins.png');
 tStart = tic;
 montage([Ic, Ic * 0.5])
 tEnd = toc(tStart);
-fprintf("Elapsed time - vectorized 2: %fs\n", tEnd)
+fprintf("Elapsed time - vectorized + montage: %fs\n", tEnd)
 
