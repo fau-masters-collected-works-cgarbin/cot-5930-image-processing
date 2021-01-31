@@ -18,12 +18,12 @@ fprintf("Elapsed time - beginner's code: %fs\n", tEnd)
 % a) Does the script work as expected?
 % Yes
 %
-% b) Will it still work if you remove teh uint8 typecasting in line 32? Why (not)?
+% b) Will it still work if you remove the uint8 typecasting in line 32? Why (not)?
 % No, because the default type for `zeros` is double.
 %
 % c) What is the main problem of with this code? Be specific!
-% It uses for loops to apply the same operation on a matrix (array). It should use
-% vectorized operations instead.
+% It uses `for` loops to apply the same operation on all elements of a matrix
+% (array). It should use vectorized operations instead.
 %
 % d) Rewrite the code to improve its efficiency while keeping it readable.
 % See next code sections.
@@ -47,8 +47,8 @@ fprintf("Elapsed time - vectorized: %fs\n", tEnd)
 %% Betterer code
 % Vectorized operation, no temporary variable, better UI
 % Improves the UI by showing the original and modified images side by side
-% As a bonus, it is significantly improves the time to show the images to the users
-% (one call to a graphing/windowing function instead of two)
+% As a bonus, it significantly improves the time to show the images to the users (one
+% call to a graphing/windowing function instead of two)
 % From the practical point of view, i.e. what the user perceives, the change to
 % `montage` is the largest improvement in responsiveness
 Ic = imread('coins.png');

@@ -5,5 +5,6 @@ load('image_data.mat')
 arrayfun(@(x) disp(x.name + ', ' + x.width + ', ' + x.height), image_data)
 
 %% Extract file names and display images on a grid
-files = {image_data.name};
+% https://www.mathworks.com/help/map/ref/extractfield.html
+files = extractfield(image_data, 'name');
 montage(files, 'Size', [2 2])
